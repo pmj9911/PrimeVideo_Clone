@@ -11,10 +11,24 @@ def signup_view(request):
          if form.is_valid():
              user = form.save()
              login(request, user)
-             return redirect('Accounts:login')
+             return redirect('Accounts:register')
     else:
     	form = forms.UserRegisterForm()
     return render(request, 'Accounts/signup.html', { 'form': form })
+
+@login_required(login_url="/Accounts/login/")
+def register_view(request):
+    if request.method == "POST":
+        form = forms.CreateProfile(request.POST,request.FILES)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.Username = request.user
+            instance.Email_Address = request.user.email 
+            instance.save()
+            return redirect('Accounts:login')
+    else:
+        form = forms.CreateProfile()
+    return render(request, 'Accounts/register.html', { 'form': form })
 
 def login_view(request):
     if request.method == 'POST':
