@@ -15,8 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path , include
+from . import views
+
+app_name = "PrimeVideoClone"
 
 urlpatterns = [
+    path('', views.home_view, name='home'),
 	path('Accounts/', include('Accounts.urls')),
 	path('Help/', include('Help.urls')),
     path('admin/', admin.site.urls),

@@ -1,0 +1,7 @@
+.HomeBackground{
+    /*background-color: #ffffff;*/
+    background-image: url(/static/homeBackground.jpg);
+    background-repeat-y: no-repeat;
+    background-size: cover;
+    /*color: #fff;*/
+}
