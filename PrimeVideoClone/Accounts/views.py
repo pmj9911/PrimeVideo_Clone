@@ -50,6 +50,5 @@ def profile_view(request):
 
 @login_required(login_url="/Accounts/login/")
 def logout_view(request):
-	if request.method == 'POST':
-		logout(request)
-		return redirect('Accounts:login')
+	logout(request)
+	return redirect('Accounts:login')

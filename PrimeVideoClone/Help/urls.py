@@ -1,4 +1,4 @@
-"""PrimeVideoClone URL Configuration
+"""BlogApp URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.1/topics/http/urls/
@@ -13,11 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
 from django.urls import path , include
+from . import views
 
+app_name = "Help"
 urlpatterns = [
-	path('Accounts/', include('Accounts.urls')),
-	path('Help/', include('Help.urls')),
-    path('admin/', admin.site.urls),
+    path('',views.help_home, name="help_home"),
+    # path('signup/',views.signup_view, name="signup"),
+    # path('login/',views.login_view, name="login"),
+    # path('logout/', views.logout_view, name="logout"),
+    # path('register/', views.register_view, name="register"),
+    # path('profile/', views.profile_view, name="profile"),
 ]
