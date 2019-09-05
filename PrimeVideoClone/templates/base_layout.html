@@ -6,6 +6,8 @@
         <title>Prime Video Clone</title>
         <link rel="stylesheet" href="{% static 'styles.css' %}">
         <link href="{% static '/bootstrap/css/bootstrap.min.css' %} " rel="stylesheet">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     </head>
     <body>
@@ -31,9 +33,10 @@
                 </ul>
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item">
-                        <form class="form-inline float-right" action="/action_page.php">
+                        <form class="form-inline float-right" action="#">
                             <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                            <button class="btn btn-success" type="submit">Search</button>
+                            <button class="btn btn-success" type="submit"><i class="fa fa-search"></i></button>
+
                         </form>
                     </li>
                     {% if user.is_authenticated %}

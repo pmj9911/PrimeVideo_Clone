@@ -1,23 +1,81 @@
 {% extends 'base_layout.html' %}
 {% load crispy_forms_tags %}
-
+<!-- f2f4f6 -->
 {% block content %}
-<div class="row" style="padding:10%;">
-    <div class='col-3'>
+<div class="row bg-dark">
+    <div class='col-5'>
     </div>
-    <div class='col-6'>
-        <h1>Log in</h1>
-        <form class="site-form" action="{% url 'Accounts:login' %}" method="post">
-            {% csrf_token %}
-            {{ form|crispy }}
-            {% if request.GET.next %}
-                <input type="hidden" name="next" value="{{ request.GET.next }}" />
-            {% endif %}
-            <input type="submit" value="Login" />
-        </form>
-        <p>Not got an account? <a href="{% url 'Accounts:signup' %}">Sign Up</a></p>
+    <div class='col-2'>
+        <div style="color:#f2f4f6;"><h1>Help</h1></div>
     </div>
-    <div class='col-3'>
+    <div class='col-5'>
+    </div>
+</div>
+<div class="row">
+    <div class='col-1'>
+    </div>
+    <div class='col-4'>
+        <div class="row">
+            <h1>Setting Up Prime Video</h1>
+            <ul>
+                <li>Install Prime Video on Your Devices</li>
+                <li>Is Prime Video Included with Amazon Prime?</li>
+                <li>Watch Prime Video on Chromecast</li>
+                <li>Download Prime Video Titles</li>
+                <li>Parental Controls on Prime Video</li>
+                <li>Set up a Prime Video PIN</li>
+                <li>Set up Restrictions on Prime Video</li>
+                <li>Receive Twitch Prime Benefits</li>
+                <li>About Prime Video Promotional Pricing</li>
+                <li>Amazon Maturity Ratings</li>
+                <li>Cancel My Prime Video Subscription</li>
+            </ul>
+        </div>
+        <div class="row">
+            <h1>Troubleshooting</h1>
+            <ul>
+                <li>Issues While Playing Prime Video Titles</li>
+                <li>Issues with Prime Video Payment and Order Errors</li>
+                <li>Issues with Prime Video PIN Errors</li>
+                <li>Issues during Sign In or Sign Out on Prime Video</li>
+                <li>Changes to Prime Video Subscriptions for Brazil</li>
+                <li>Can I Watch Prime Video If I Travel Abroad?</li>
+            </ul>
+        </div>
+    </div>
+    <div class='col-1'>
+    </div>
+    <div class='col-4'>
+        <div class="row">
+                <h1>    Prime Video Channels</h1>
+                <ul>
+                    <li>What Is Included with Prime Video Channels?</li>
+                    <li>Why Do I Have to Pay Extra for Prime Video Channels?</li>
+                    <li>Problem Watching Prime Video Channels While I Travel</li>
+                    <li>Issues Accessing Channel Subscriptions from External Providers</li>
+                    <li>Cancel Your Prime Video Channel Subscription</li>
+                </ul>
+        </div>
+        <div class="row">
+                <h1> Supported Devices </h1>
+                <ul>
+                    <li>Smart TVs with the Prime Video App</li>
+                    <li>Amazon Devices with the Prime Video App</li>
+                    <li>Mobile Devices with the Prime Video App</li>
+                    <li>Games Consoles with the Prime Video App</li>
+                    <li>Blu-Ray Players with the Prime Video App</li>
+                    <li>Set Top Boxes and Media Players with the Prime Video App</li>
+                    <li>Prime Video System Requirements for Computers</li>
+                </ul>
+        </div>
+        <div class="row">
+                <h1> Terms & Conditions </h1>
+                <ul>
+                    <li>VAT / GST Rates</li>
+                    <li>About Tax on Prime Video subscriptions sold on PrimeVideo.com </li>
+                    <li>Amazon Prime Video Service Provider Information and Applicable Terms and Policies</li>
+                </ul>
+        </div>
     </div>
 </div>
 {% endblock %}	
