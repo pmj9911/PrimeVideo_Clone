@@ -39,10 +39,14 @@ def login_view(request):
             if 'next' in request.POST:
                 return redirect(request.POST.get('next'))
             else: 
-                return redirect('Accounts:signup')
+                return redirect('Accounts:profile')
     else:
     	form = AuthenticationForm()
     return render(request, 'Accounts/login.html', { 'form': form })
+
+@login_required(login_url="/Accounts/login/")
+def profile_view(request):
+    return render(request, 'Accounts/profile.html')
 
 @login_required(login_url="/Accounts/login/")
 def logout_view(request):
